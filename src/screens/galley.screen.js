@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView,Dimensions,TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 import {Card, Button} from 'react-native-paper';
 import firebase from 'firebase/compat/app';
@@ -12,7 +12,8 @@ const ImageCardCover = styled(Card.Cover)`
   color: 'green';
 `;
 
-export const GalleryScreen = () => {
+export const GalleryScreen = ({navigation}) => {
+  console.log(navigation);
   const [images, setImages] = useState([]);
   const updateImages = (newImage) => {
     setImages(prevImages => [newImage, ...prevImages]);
@@ -59,18 +60,37 @@ export const GalleryScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: '#00bfff'}}>
       <ImageUploadButton updateImages={updateImages} />
-      <ScrollView style={{flex: 0.85}}>
+      <ScrollView style={{flex: 1}}>
+        <View style={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          padding: 4,
+        }}>
         {images.map((image, index) => (
-          <View
-            key={index}
-            style={{
-              backgroundColor: 'yellow',
-              justifyContent: 'center',
-              margin: 5,
-            }}>
-            <ImageCardCover source={{uri: image.url}} />
-          </View>
+  <TouchableOpacity
+  key={index}
+  
+  onPress={() => navigation.navigate('FullImage', { imageUrl: image.url })}
+  style={{
+    height: Dimensions.get('window').width/2,
+    width: '50%',
+    padding: 4,
+  }}>
+    <View style={{ flex: 1, backgroundColor: '#cef5c4', padding: 3,borderRadius:5 }}>
+  <Image
+    style={{
+      flex: 1,
+      backgroundColor:'red',
+      resizeMode: 'cover', // Ensuring the image fits within the container without cropping
+      borderRadius:5
+    }}
+    source={{uri: image.url}}
+  />
+  </View>
+</TouchableOpacity>
+     
         ))}
+        </View>
       </ScrollView>
     </View>
   );

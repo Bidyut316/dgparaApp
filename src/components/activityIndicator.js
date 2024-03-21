@@ -7,9 +7,10 @@ const Activity = ({text}) => {
     <View style={styles.container}>
       <View style={styles.activityContainer}>
         <ActivityIndicator size={100} color="#0000ff" />
+        <Text style={styles.text}>{text}</Text>
+
       </View>
     </View>
-        <Text style={styles.text}>{text}</Text>
     </>
   );
 };
@@ -21,11 +22,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   activityContainer: {
-    flexDirection: 'row',
+    // flexDirection: 'row',
     justifyContent: 'space-around',
     padding: 10,
     backgroundColor: 'transparent',
-    marginTop: 200,
+    // marginTop: 200,
   },
   text: {
     fontSize: 22,

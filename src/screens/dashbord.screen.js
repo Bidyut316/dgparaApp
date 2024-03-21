@@ -10,7 +10,7 @@ import {ListScreen} from './listScreen';
 import {ChatScreen} from './chatscreen';
 import {ChatStackScreen} from '../navigation/chatscreen.navigation';
 import {MatchdataContextProvider} from '../services/auth/matchdata';
-
+import { ImageStackScreen } from '../navigation/image.navigator';
 const Tab = createMaterialTopTabNavigator();
 
 const TAB_ICON = {
@@ -38,7 +38,7 @@ export const NavigationMaterial = () => {
     <MatchdataContextProvider>
       <Tab.Navigator screenOptions={createScreenOptions}>
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Images" component={GalleryScreen} />
+        <Tab.Screen name="Images" component={ImageStackScreen} />
         <Tab.Screen name="Add" component={AddScreen} />
         <Tab.Screen name="List" component={ListScreen} />
         <Tab.Screen name="Chat" component={ChatStackScreen} />
