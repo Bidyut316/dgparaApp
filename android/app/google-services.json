@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "844275819270",
+    "firebase_url": "https://dgpara-b457e-default-rtdb.firebaseio.com",
+    "project_id": "dgpara-b457e",
+    "storage_bucket": "dgpara-b457e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844275819270:android:98b482d0824dcffc2b7487",
+        "android_client_info": {
+          "package_name": "com.dgpara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844275819270-g234dfl751ov0u49p0392fp2h6bhrv24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCQ5pgG75ecxFXh-tSP7GXsA0zYqN6A8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844275819270-g234dfl751ov0u49p0392fp2h6bhrv24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
